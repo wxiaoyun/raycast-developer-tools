@@ -1,7 +1,7 @@
 import { Action, ActionPanel, Clipboard, Form, showHUD } from "@raycast/api";
 import { useForm } from "@raycast/utils";
 import { useEffect } from "react";
-import { addSlashes, removeSlashes } from 'slashes';
+import { addSlashes, removeSlashes } from "slashes";
 
 interface JSONUnescapeForm {
   escaped: string;
