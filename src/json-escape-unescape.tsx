@@ -21,13 +21,17 @@ export default function Command() {
   });
 
   useEffect(() => {
-    const unescaped = removeSlashes(values.escaped);
-    setValue("unescaped", unescaped);
+    const newUnescaped = removeSlashes(values.escaped);
+    if (newUnescaped !== values.unescaped) {
+      setValue("unescaped", newUnescaped);
+    }
   }, [values.escaped]);
 
   useEffect(() => {
-    const escaped = addSlashes(values.unescaped);
-    setValue("escaped", escaped);
+    const newEscaped = addSlashes(values.unescaped);
+    if (newEscaped !== values.escaped) {
+      setValue("escaped", newEscaped);
+    }
   }, [values.unescaped]);
 
   return (
@@ -48,13 +52,14 @@ export default function Command() {
       <Form.TextArea
         {...itemProps.escaped}
         title="Escaped JSON String"
-        placeholder="Enter escaped JSON string (e.g. Hello\nWorld)"
+        placeholder="Enter JSON string to unescape"
         onChange={(value) => setValue("escaped", value)}
         autoFocus
       />
       <Form.TextArea
         {...itemProps.unescaped}
         title="Unescaped JSON String"
+        placeholder="Enter JSON string to escape"
         onChange={(value) => setValue("unescaped", value)}
       />
     </Form>

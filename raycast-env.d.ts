@@ -20,8 +20,8 @@ declare namespace Preferences {
 }
   /** Preferences accessible in the `url-encode-decode` command */
   export type UrlEncodeDecode = ExtensionPreferences & {}
-  /** Preferences accessible in the `json-unescape` command */
-  export type JsonUnescape = ExtensionPreferences & {}
+  /** Preferences accessible in the `json-escape-unescape` command */
+  export type JsonEscapeUnescape = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -32,7 +32,7 @@ declare namespace Arguments {
 }
   /** Arguments passed to the `url-encode-decode` command */
   export type UrlEncodeDecode = {}
-  /** Arguments passed to the `json-unescape` command */
-  export type JsonUnescape = {}
+  /** Arguments passed to the `json-escape-unescape` command */
+  export type JsonEscapeUnescape = {}
 }
 
