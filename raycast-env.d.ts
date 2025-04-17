@@ -14,7 +14,10 @@ declare type Preferences = ExtensionPreferences
 
 declare namespace Preferences {
   /** Preferences accessible in the `timestamp-converter` command */
-  export type TimestampConverter = ExtensionPreferences & {}
+  export type TimestampConverter = ExtensionPreferences & {
+  /** Use Selected Text - Always try to use the selected text as the input for the command first */
+  "use-selected-text"?: boolean
+}
   /** Preferences accessible in the `url-encode-decode` command */
   export type UrlEncodeDecode = ExtensionPreferences & {}
   /** Preferences accessible in the `json-unescape` command */
@@ -23,7 +26,10 @@ declare namespace Preferences {
 
 declare namespace Arguments {
   /** Arguments passed to the `timestamp-converter` command */
-  export type TimestampConverter = {}
+  export type TimestampConverter = {
+  /** Enter a timestamp */
+  "timestamp": string
+}
   /** Arguments passed to the `url-encode-decode` command */
   export type UrlEncodeDecode = {}
   /** Arguments passed to the `json-unescape` command */
