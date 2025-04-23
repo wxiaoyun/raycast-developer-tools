@@ -6,7 +6,7 @@ import {
   getPreferenceValues,
   getSelectedText,
   LaunchProps,
-  openCommandPreferences
+  openCommandPreferences,
 } from "@raycast/api";
 import { FormValidation, showFailureToast, useForm, useLocalStorage } from "@raycast/utils";
 import { useEffect, useMemo } from "react";
@@ -98,7 +98,6 @@ const tryGetSelectedTextAndUpdate = async (updaterFn: (text: string) => void) =>
     console.error(e);
   }
 };
-
 
 const STORAGE_KEY_USE_MILLISECONDS = "convert-timestamp::use-milliseconds";
 

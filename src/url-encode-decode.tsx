@@ -38,10 +38,7 @@ export default function Command() {
     <Form
       actions={
         <ActionPanel>
-          <Action
-            title="Copy Encoded URL"
-            onAction={() => copyWithFeedback(values.encoded)}
-          />
+          <Action title="Copy Encoded URL" onAction={() => copyWithFeedback(values.encoded)} />
           <Action
             title="Copy Decoded URL"
             onAction={() => {
