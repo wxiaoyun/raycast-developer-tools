@@ -1,17 +1,16 @@
 import {
   Action,
   ActionPanel,
-  Clipboard,
   environment,
   Form,
   getPreferenceValues,
   getSelectedText,
   LaunchProps,
-  openCommandPreferences,
-  showHUD,
+  openCommandPreferences
 } from "@raycast/api";
 import { FormValidation, showFailureToast, useForm, useLocalStorage } from "@raycast/utils";
 import { useEffect, useMemo } from "react";
+import { copyWithFeedback } from "./utils/clipboard";
 
 interface TimestampForm {
   dateObject: Date;
@@ -100,10 +99,6 @@ const tryGetSelectedTextAndUpdate = async (updaterFn: (text: string) => void) =>
   }
 };
 
-const copyWithFeedback = (content: string) => {
-  Clipboard.copy(content);
-  showHUD("Copied to clipboard");
-};
 
 const STORAGE_KEY_USE_MILLISECONDS = "convert-timestamp::use-milliseconds";
 
